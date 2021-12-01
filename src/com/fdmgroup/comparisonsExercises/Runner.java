@@ -26,19 +26,19 @@ public class Runner {
 		books.add(learnJavaScript);
 		books.add(learnPython);
 		
-		//sort by number of pages
+		//1. sort by number of pages
 		Collections.sort(books, new PageComparator());
 		Iterator<Book> itr = books.iterator(); 
 		
 		while (itr.hasNext()) {
-			Book b = (Book)itr.next();
-			System.out.println("Number of Pages: " + b.getNumberOfPages());
+			Book b1 = (Book)itr.next();
+			System.out.println("Number of Pages: " + b1.getNumberOfPages());
 			
 		}
 		
 		System.out.println();
 		
-		//sort by title
+		//2. sort by title
 		Collections.sort(books, new NameComparator());
 		Iterator<Book> itr2 = books.iterator();
 		
@@ -46,6 +46,20 @@ public class Runner {
 			Book b2 = (Book)itr2.next();
 			System.out.println("Title: " + b2.getTitle());
 		}
+		
+		System.out.println();
+		
+		//3. sort by price in descending order
+		Collections.sort(books, new PriceComparator());
+		
+		Iterator<Book> itr3 = books.iterator();
+		
+		while (itr3.hasNext()) {
+			Book b3 = (Book)itr3.next();
+			System.out.println(b3.getPrice());
+		}
+		
+		
 	}
 
 }
